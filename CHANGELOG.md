@@ -7,3 +7,4 @@ This changelog follows [**Keep a changelog** conventions](https://keepachangelog
 ### Added
 
 - `FileGenerator` used to generate PHP files
+- `BlockGenerator` used to generate a block of code

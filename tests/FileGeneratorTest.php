@@ -65,4 +65,14 @@ class FileGeneratorTest extends TestCase
 
         self::assertSame("<?php\n\ncode1\n\ncode2\n\ncode3\n\ncode4\n\ncode5\n\ncode6\n", $generator->generate());
     }
+
+    public function testAddBlock(): void
+    {
+        $generator = new FileGenerator();
+        $generator->addBlock()
+            ->line('line1')
+            ->line('line2');
+
+        self::assertSame("<?php\n\nline1;\nline2;\n", $generator->generate());
+    }
 }

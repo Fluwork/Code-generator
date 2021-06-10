@@ -18,6 +18,13 @@ class FileGenerator implements GeneratorInterface
         return $this;
     }
 
+    public function addBlock(): BlockGenerator
+    {
+        $this->addGenerators($generator = new BlockGenerator());
+
+        return $generator;
+    }
+
     public function generate(): string
     {
         if (!$this->generators) {
