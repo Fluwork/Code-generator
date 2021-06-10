@@ -30,21 +30,21 @@ class BlockGenerator implements GeneratorInterface
         return $this->rawLine(sprintf('%s;', $line));
     }
 
-    public function rawLine(string $line): self
+    public function rawLine(string $line): static
     {
         $this->lines[] = sprintf('%s%s', $this->generateIndentationSpaces($this->indentation), $line);
 
         return $this;
     }
 
-    public function indent(): self
+    public function indent(): static
     {
         $this->indentation++;
 
         return $this;
     }
 
-    public function outdent(): self
+    public function outdent(): static
     {
         if (0 !== $this->indentation) {
             $this->indentation--;
@@ -53,7 +53,7 @@ class BlockGenerator implements GeneratorInterface
         return $this;
     }
 
-    public function setBaseIndentation(int $indentation): self
+    public function setBaseIndentation(int $indentation): static
     {
         if ($indentation < 0) {
             throw new InvalidArgumentException('Indentation must be positive or 0');

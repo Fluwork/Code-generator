@@ -3,7 +3,6 @@
 namespace Fluwork\CodeGenerator\Tests;
 
 use Fluwork\CodeGenerator\FileGenerator;
-use PHPUnit\Framework\TestCase;
 
 class FileGeneratorTest extends TestCase
 {
@@ -74,5 +73,22 @@ class FileGeneratorTest extends TestCase
             ->line('line2');
 
         self::assertSame("<?php\n\nline1;\nline2;\n", $generator->generate());
+    }
+
+    public function testAddFunction(): void
+    {
+        $generator = new FileGenerator();
+        $generator->addFunction('fun');
+
+        $expectedCode = <<<'PHP'
+<?php
+
+function fun()
+{
+}
+
+PHP;
+
+        self::assertSame($expectedCode, $generator->generate());
     }
 }

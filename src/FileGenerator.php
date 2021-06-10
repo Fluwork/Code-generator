@@ -11,7 +11,7 @@ class FileGenerator implements GeneratorInterface
         $this->generators = $generators;
     }
 
-    public function addGenerators(GeneratorInterface ...$generators): self
+    public function addGenerators(GeneratorInterface ...$generators): static
     {
         $this->generators = array_merge($this->generators, $generators);
 
@@ -25,6 +25,9 @@ class FileGenerator implements GeneratorInterface
         return $generator;
     }
 
+    /**
+     * @return string
+     */
     public function generate(): string
     {
         if (!$this->generators) {
@@ -35,5 +38,12 @@ class FileGenerator implements GeneratorInterface
         $code = join("\n\n", $generatorsCode);
 
         return "<?php\n\n$code\n";
+    }
+
+    public function addFunction(string $name): FunctionGenerator
+    {
+        $this->addGenerators($generator = new FunctionGenerator($name));
+
+        return $generator;
     }
 }

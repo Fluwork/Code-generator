@@ -7,11 +7,12 @@ This changelog follows [**Keep a changelog** conventions](https://keepachangelog
 ### Added
 
 - `FileGenerator` used to generate PHP files
-- `BlockGenerator` used to generate a block of code
-- `ParameterGenerator` used to generate a function parameter
-- `ParametersGenerator` used to generate a sequence of parameters
-- `RootTypeGenerator` used to generate a type which can be nullable
-- `TypeGenerator` used to generate a plain type
-- `UnionTypeGenerator` used to generate a union type
-- `ValueGenerator` used to generate a string from a mixed value
+- `BlockGenerator` used to generate blocks of code
+- `ParameterGenerator` used to generate function parameters
+- `ParametersGenerator` used to generate sequences of parameters
+- `RootTypeGenerator` used to generate types which can be nullable
+- `TypeGenerator` used to generate plain types
+- `UnionTypeGenerator` used to generate union types
+- `ValueGenerator` used to generate strings from mixed values
 - `Visibility` which defines the three possible visibilities in PHP
+- `FunctionGenerator` used to generate a function
