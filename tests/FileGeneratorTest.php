@@ -91,4 +91,26 @@ PHP;
 
         self::assertSame($expectedCode, $generator->generate());
     }
+
+    public function testAddNamespace(): void
+    {
+        $generator = (new FileGenerator())->addNamespace('name\space');
+        self::assertSame("<?php\n\nnamespace name\space;\n", $generator->generate());
+    }
+
+    public function testAddClass(): void
+    {
+        $expectedCode = <<<PHP
+<?php
+
+class name
+{
+}
+
+PHP;
+
+        $generator = new FileGenerator();
+        $generator->addClass('name');
+        self::assertSame($expectedCode, $generator->generate());
+    }
 }

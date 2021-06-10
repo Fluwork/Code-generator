@@ -10,6 +10,13 @@ class TypeGenerator implements GeneratorInterface
 
     public function generate(): string
     {
-        return $this->type;
+        if (in_array(
+            $this->type,
+            ['bool', 'int', 'float', 'string', 'array', 'iterable', 'void', 'null', 'object', 'callable']
+        )) {
+            return $this->type;
+        }
+
+        return sprintf('\%s', $this->type);
     }
 }

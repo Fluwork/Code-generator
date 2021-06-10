@@ -22,7 +22,7 @@ class ParameterGeneratorTest extends TestCase
     public function testParameterNameAndRootType(): void
     {
         $generator = new ParameterGenerator('parameter', new RootTypeGenerator('type'));
-        self::assertSame('type $parameter', $generator->generate());
+        self::assertSame('\type $parameter', $generator->generate());
     }
 
     public function testParameterNameAndUnionType(): void
@@ -33,7 +33,7 @@ class ParameterGeneratorTest extends TestCase
         );
 
         $generator = new ParameterGenerator('parameter', $typeGenerator);
-        self::assertSame('type1|type2 $parameter', $generator->generate());
+        self::assertSame('\type1|\type2 $parameter', $generator->generate());
     }
 
     public function testParameterNameAndDefault(): void
@@ -51,7 +51,7 @@ class ParameterGeneratorTest extends TestCase
     public function testParameterNameAndPropertyPromotionAndRootType(): void
     {
         $generator = new ParameterGenerator('parameter', new RootTypeGenerator('type'), null, Visibility::PUBLIC);
-        self::assertSame('public type $parameter', $generator->generate());
+        self::assertSame('public \type $parameter', $generator->generate());
     }
 
     public function testParameterNameAndVariadic(): void

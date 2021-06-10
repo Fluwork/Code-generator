@@ -57,8 +57,8 @@ PHP;
 
     public function testSetReturnTypeGeneratorWithRootType(): void
     {
-        $expectedCode = <<<PHP
-function fun(): type
+        $expectedCode = <<<'PHP'
+function fun(): \type
 {
 }
 PHP;
@@ -71,8 +71,8 @@ PHP;
 
     public function testSetReturnTypeGeneratorWithUnionType(): void
     {
-        $expectedCode = <<<PHP
-function fun(): type1|type2
+        $expectedCode = <<<'PHP'
+function fun(): \type1|\type2
 {
 }
 PHP;
@@ -90,8 +90,8 @@ PHP;
 
     public function testSetReturnType(): void
     {
-        $expectedCode = <<<PHP
-function fun(): type
+        $expectedCode = <<<'PHP'
+function fun(): \type
 {
 }
 PHP;
@@ -102,8 +102,8 @@ PHP;
 
     public function testSetReturnUnionType(): void
     {
-        $expectedCode = <<<PHP
-function fun(): type1|type2
+        $expectedCode = <<<'PHP'
+function fun(): \type1|\type2
 {
 }
 PHP;

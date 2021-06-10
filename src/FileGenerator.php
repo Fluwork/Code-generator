@@ -46,4 +46,16 @@ class FileGenerator implements GeneratorInterface
 
         return $generator;
     }
+
+    public function addNamespace(string $namespace): static
+    {
+        return $this->addGenerators(new NamespaceGenerator($namespace));
+    }
+
+    public function addClass(string $name): ClassGenerator
+    {
+        $this->addGenerators($generator = new ClassGenerator($name));
+
+        return $generator;
+    }
 }

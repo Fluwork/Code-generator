@@ -11,7 +11,7 @@ class UnionTypeGeneratorTest extends TestCase
     public function testOneType(): void
     {
         $generator = new UnionTypeGenerator(new TypeGenerator('type'));
-        self::assertSame('type', $generator->generate());
+        self::assertSame('\type', $generator->generate());
     }
 
     public function testTwoTypes(): void
@@ -21,6 +21,6 @@ class UnionTypeGeneratorTest extends TestCase
             new TypeGenerator('type2')
         );
 
-        self::assertSame('type1|type2', $generator->generate());
+        self::assertSame('\type1|\type2', $generator->generate());
     }
 }

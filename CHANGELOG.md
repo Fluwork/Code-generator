@@ -15,4 +15,10 @@ This changelog follows [**Keep a changelog** conventions](https://keepachangelog
 - `UnionTypeGenerator` used to generate union types
 - `ValueGenerator` used to generate strings from mixed values
 - `Visibility` which defines the three possible visibilities in PHP
-- `FunctionGenerator` used to generate a function
+- `FunctionGenerator` used to generate functions
+- `ClassGenerator` used to generate classes
+- `ConstantGenerator` used to generate constants
+- `InterfaceMethodGenerator` used to generate methods for interfaces
+- `MethodGenerator` used to generate methods
+- `NamespaceGenerator` used to generate namespace statements
+- `PropertyGenerator` used to generate properties

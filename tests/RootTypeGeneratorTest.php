@@ -10,12 +10,12 @@ class RootTypeGeneratorTest extends TestCase
     public function testGenerate(): void
     {
         $generator = new RootTypeGenerator('type');
-        self::assertSame('type', $generator->generate());
+        self::assertSame('\type', $generator->generate());
     }
 
     public function testGenerateWithNullable(): void
     {
         $generator = new RootTypeGenerator('type', true);
-        self::assertSame('?type', $generator->generate());
+        self::assertSame('?\type', $generator->generate());
     }
 }
